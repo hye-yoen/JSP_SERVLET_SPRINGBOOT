@@ -101,7 +101,7 @@
 
 
     <!--  -->
-    <form action="/C05Join_Process.jsp" method="post">
+    <form action="./Join_Process.jsp" method="post">
         <div class="row top-header">
 
         </div>
@@ -138,7 +138,7 @@
                 disabled : 서버전송 대상에서 제외 , 입력불가
                 readonly : 서버전송 대상에 포함 , 입력불가
             -->
-            <input name="rePassword" type="password" value="1234" readonly/>
+            <input name="rePassword" type="password" value="1234" readonly />
         </div>
         <div class="row">
             <label>이름</label>
@@ -196,17 +196,17 @@
         </div>
 
         <div class="row">
-            <select>
+            <select name="year">
                 <option value="2025" selected>2025</option>
                 <option value="2024">2024</option>
                 <option value="2023">2023</option>
             </select>
-            <select>
+            <select name=month>
                 <option value="12" selected>12</option>
                 <option value="11">11</option>
                 <option value="10">10</option>
             </select>
-            <select>
+            <select name="day">
                 <option value="01" selected>01</option>
                 <option value="02">02</option>
                 <option value="03">03</option>

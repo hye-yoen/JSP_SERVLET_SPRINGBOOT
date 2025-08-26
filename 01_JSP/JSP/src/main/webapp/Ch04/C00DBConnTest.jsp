@@ -13,7 +13,7 @@
 		ResultSet rs = null;			// Select 결과물 담을 객체
 		List<Sample1Dto> list = null;
 		//연결작업
-		try {			
+		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver Loading Success...");
 			conn = DriverManager.getConnection(url,id,pw);
