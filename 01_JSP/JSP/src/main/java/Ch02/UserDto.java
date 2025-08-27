@@ -6,8 +6,8 @@ public class UserDto {
 	private String rePassword;
 	private String username;
 	private String zipcode;
-	private String add1;
-	private String add2;
+	private String addr1;
+	private String addr2;
 	private String phone1;
 	private String phone2;
 	private String phone3;
@@ -19,6 +19,9 @@ public class UserDto {
 	private String month;
 	private String day;
 	
+	private String Addr1;
+	private String Addr2;
+	
 	
 	public UserDto(){}
 
@@ -26,15 +29,15 @@ public class UserDto {
 
 	public UserDto(String userid, String password, String rePassword, String username, String zipcode, String add1,
 			String add2, String phone1, String phone2, String phone3, String tell1, String tell2, String tell3,
-			String email, String year, String month, String day) {
+			String email, String year, String month, String day,String Addr1,String Addr2) {
 		super();
 		this.userid = userid;
 		this.password = password;
 		this.rePassword = rePassword;
 		this.username = username;
 		this.zipcode = zipcode;
-		this.add1 = add1;
-		this.add2 = add2;
+		this.addr1 = add1;
+		this.addr2 = add2;
 		this.phone1 = phone1;
 		this.phone2 = phone2;
 		this.phone3 = phone3;
@@ -82,20 +85,20 @@ public class UserDto {
 		this.zipcode = zipcode;
 	}
 
-	public String getAdd1() {
-		return add1;
+	public String getAddr1() {
+		return addr1;
 	}
 
-	public void setAdd1(String add1) {
-		this.add1 = add1;
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
 	}
 
-	public String getAdd2() {
-		return add2;
+	public String getAddr2() {
+		return addr2;
 	}
 
-	public void setAdd2(String add2) {
-		this.add2 = add2;
+	public void setAdd2(String addr2) {
+		this.addr2 = addr2;
 	}
 
 
@@ -103,10 +106,16 @@ public class UserDto {
 	@Override
 	public String toString() {
 		return "UserDto [userid=" + userid + ", password=" + password + ", rePassword=" + rePassword + ", username="
-				+ username + ", zipcode=" + zipcode + ", add1=" + add1 + ", add2=" + add2 + ", phone1=" + phone1
+				+ username + ", zipcode=" + zipcode + ", add1=" + addr1 + ", add2=" + addr2 + ", phone1=" + phone1
 				+ ", phone2=" + phone2 + ", phone3=" + phone3 + ", tell1=" + tell1 + ", tell2=" + tell2 + ", tell3="
-				+ tell3 + ", email=" + email + ", year=" + year + ", month=" + month + ", day=" + day + "]";
+				+ tell3 + ", email=" + email + ", year=" + year + ", month=" + month + ", day=" + day + ", Addr1="
+				+ Addr1 + ", Addr2=" + Addr2 + "]";
 	}
+	
+
+
+
+	
 
 	
 
