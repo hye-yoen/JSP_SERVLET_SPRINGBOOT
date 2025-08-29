@@ -4,39 +4,93 @@
 <!-- 선언문 -->    
 <%!
 	public boolean isValid(UserDto dto){
+		boolean pass = true;
 		if(dto.getUserid().isEmpty()){ //userDtod에서 userid가 비어있다면
 			System.out.println("Userid를 입력하세요");
-			return false;
+			pass = false;
 		}
 		
-	
-		 if(dto.getPassword()== null ||dto.getPassword().isEmpty()){ //userDtod에서 userid가 비어있다면
+		if(dto.getPassword()== null ||dto.getPassword().isEmpty()){ //userDtod에서 userid가 비어있다면
 			System.out.println("비닐번호를 입력하세요");
-			return false;
-		} 
+			pass = false;
+		}
 		
+		if(dto.getUsername() ==null || dto.getUsername().isEmpty()){		
+			System.out.println("Username 를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getZipcode() ==null || dto.getZipcode().isEmpty()){		
+			System.out.println("우편주소를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getAddr1() ==null || dto.getAddr1().isEmpty()){		
+			System.out.println("기본주소를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getAddr2() ==null || dto.getAddr2().isEmpty()){		
+			System.out.println("상세주소를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getPhone1() ==null || dto.getPhone1().isEmpty()){		
+			System.out.println("전화번호를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getPhone2() ==null || dto.getPhone2().isEmpty()){		
+			System.out.println("전화번호를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getPhone3() ==null || dto.getPhone3().isEmpty()){		
+			System.out.println("전화번호를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getTel1() ==null || dto.getTel1().isEmpty()){		
+			System.out.println("전화번호를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getTel2() ==null || dto.getTel2().isEmpty()){		
+			System.out.println("전화번호를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getTel3() ==null || dto.getTel3().isEmpty()){		
+			System.out.println("전화번호를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getEmail() ==null || dto.getEmail().isEmpty()){		
+			System.out.println("이메일를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getYear() ==null || dto.getYear().isEmpty()){		
+			System.out.println("년도를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getMonth() ==null || dto.getMonth().isEmpty()){		
+			System.out.println("월를 입력하세요.");
+			pass = false;
+		}
+		if(dto.getDay() ==null || dto.getDay().isEmpty()){		
+			System.out.println("일를 입력하세요.");
+			pass = false;
+		}
 		
-		
-		
-		
-		
-		
+
 		
 		if(dto.getUserid().length()<=5){ //userDto의 길이가 5자 이하
 			System.out.println("Userid는 5자 이상 입력");
-			return false;
+			pass = false;
 		}
 		
 		//3) 패스워드 유효성 검증(regex : ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,20}$ )
 		//- System.out 으로 출력후 false
+	 	//3) 패스워드 유효성 검증(regex : ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,20}$ )
+		//- System.out 으로 출력후 false
 		String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,20}$";
-		if(!(dto.getPassword().equals(regex))) //password와 regex와의 비교
+		if(!(dto.getPassword().matches(regex))) //password와 regex와의 비교
 		{
 			System.out.println("패스워드 조건 안 맞음");
-			return false;
-		} 
+			pass = false;
+		}
 	
-		return true;
+		return pass;
 	}
 %>
 <%
@@ -94,13 +148,3 @@
 		response.sendRedirect("./03login.jsp");
 %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	DTO : <%=dto %><br>
-</body>
-</html> 

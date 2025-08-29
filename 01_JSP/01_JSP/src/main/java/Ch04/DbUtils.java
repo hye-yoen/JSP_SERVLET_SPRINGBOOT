@@ -41,13 +41,23 @@ public class DbUtils {
 		
 		public static int insertUser(UserDto userDto) throws Exception 
 		{
-			pstmt = conn.prepareStatement("insert into tbl_user values(?,?,?,?,?,?)");
+			pstmt = conn.prepareStatement("insert into tbl_user values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			pstmt.setString(1,userDto.getUserid());
 			pstmt.setString(2,userDto.getPassword());
 			pstmt.setString(3,userDto.getUsername());
 			pstmt.setString(4,userDto.getZipcode());
 			pstmt.setString(5,userDto.getAddr1());
 			pstmt.setString(6,userDto.getAddr2());
+			pstmt.setString(7,userDto.getPhone1());
+			pstmt.setString(8,userDto.getPhone2());
+			pstmt.setString(9,userDto.getPhone3());
+			pstmt.setString(10,userDto.getTel1());
+			pstmt.setString(11,userDto.getTel2());
+			pstmt.setString(12,userDto.getTel3());
+			pstmt.setString(13,userDto.getEmail());
+			pstmt.setString(14,userDto.getYear());
+			pstmt.setString(15,userDto.getMonth());
+			pstmt.setString(16,userDto.getDay());
 			
 			int result = pstmt.executeUpdate();
 			
@@ -69,6 +79,17 @@ public class DbUtils {
 					dto.setUsername(rs.getString("zipcode"));
 					dto.setAddr1(rs.getString("addr1"));
 					dto.setAddr2(rs.getString("addr2"));
+					dto.setPhone1(rs.getString("phone1"));
+					dto.setPhone2(rs.getString("phone2"));
+					dto.setPhone3(rs.getString("phone3"));
+					dto.setTel1(rs.getString("tel1"));
+					dto.setTel2(rs.getString("tel2"));
+					dto.setTel3(rs.getString("tel3"));
+					dto.setEmail(rs.getString("email"));
+					dto.setYear(rs.getString("year"));
+					dto.setMonth(rs.getString("month"));
+					dto.setDay(rs.getString("day"));
+				
 				}
 			}
 			
