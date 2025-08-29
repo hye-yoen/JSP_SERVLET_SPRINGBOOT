@@ -9,19 +9,22 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
-//@WebFilter("/index.do")
+//@WebFilter(urlPatterns = {"/index.do"})
 public class HomeFilter_1 implements Filter{
 
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
 			throws IOException, ServletException {
-		//request가 Servlet로 전달되기 전
 		
-		System.out.println("[FILTER] HOME FILTER START...");
-		chain.doFilter(req, resp); //filter-chain 연결
+		//Request가 Servlet로 전달되기 전 코드
+		
+		System.out.println("[FILTER] HOME FILTER_1 START..");
+		
+		chain.doFilter(req, resp);
 		
 		//Response가 Client로 전달되기 전
-		System.out.println("[FILTER] HOME FILTER END...");
+		System.out.println("[FILTER] HOME FILTER_1 END..");
+		
 	}
-	
+
 }

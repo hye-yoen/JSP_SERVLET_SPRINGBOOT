@@ -1,4 +1,4 @@
-package Ch02;
+package Dtos;
 
 public class UserDto {
 	private String userid;

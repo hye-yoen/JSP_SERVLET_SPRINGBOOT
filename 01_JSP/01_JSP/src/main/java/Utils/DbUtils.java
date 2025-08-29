@@ -1,11 +1,11 @@
-package Ch04;
+package Utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import Ch02.UserDto;
+import Dtos.UserDto;
 
 
 
@@ -24,7 +24,6 @@ public class DbUtils {
 		public static void conn() throws Exception
 		{
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			System.out.println("...");
 			System.out.println("Driver Loading Success...");
 			conn = DriverManager.getConnection(url,id,pw);
 			System.out.println("DB CONNECTED...");
