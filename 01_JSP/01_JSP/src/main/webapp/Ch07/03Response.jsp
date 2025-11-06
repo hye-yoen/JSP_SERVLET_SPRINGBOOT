@@ -13,7 +13,7 @@
 	response.sendRedirect("./02Request.jsp");
 
 
-	//response.sendError(HttpServletResponse.SC_REQUEST_TIMEOUT);
+	//response.sendError(HttpServletResponse.SC_REQUEST_TIMEOUT); //시간 다 됨
 	
 	//404 Error
 	//response.sendError(HttpServletResponse.SC_NOT_FOUND,"해당 페이지를 찾을수가 없습니다");
